@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}">Título</title>
+    <link rel="stylesheet" href="/stilos.css">
+</head>
+<body>
+    <header class= "cabecera">
+        <h1 th:text="${titulo}">Rincones de Cartagena</h1>
+        <p>pagina armada por sprint boot a las <strong th:text="${hora}">00:00:00</strong></p>
+    </header>
+
+    <main class="tarjetas">
+        <article class="tarjeta" th:each="lugar : ${lugares}">
+            <span class="sector" th:text="${lugar.sector}">Sector</span>
+            <h2 th:text="${lugar.nombre}">Nombre del lugar</h2>
+            <p th:text="${lugar.descripcion}">Descripción del lugar</p>
+        </article>
+    </main>
+
+     <footer class="pie">SENA - ADSO - FICHA 3230489 - JESUS DAVID ALCALA HERNANDEZ</footer>
+</body>
+</html>
